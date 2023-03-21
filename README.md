@@ -1,15 +1,18 @@
 # TLD-Assembly-Archive
 
 ## usage
-get.bat $version $manifest $steamusername
+Change the **archive-folder** variable in get.bat
 
+cmd> get.bat $version $manifest $steamusername
 ## requires
 dotnet tool install ilspycmd -g
+### to-do / coming soon ™
+version diff comparisons
 
-## to-do / coming soon ™
-diff comparisons
+---
+### uses
+[DepotDownloader](https://github.com/SteamRE/DepotDownloader)
 
-## uses
-(https://github.com/SteamRE/DepotDownloader)DepotDownloader
-(https://github.com/SamboyCoding/Cpp2IL)Cpp2Il
-(https://www.nuget.org/packages/ilspycmd/)ilspycmd 
+[Cpp2Il](https://github.com/SamboyCoding/Cpp2IL)
+
+[ilspycmd](https://www.nuget.org/packages/ilspycmd/) 
