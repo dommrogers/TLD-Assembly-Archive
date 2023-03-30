@@ -1,0 +1,48 @@
+using System;
+using Cpp2ILInjected.CallAnalysis;
+using NodeCanvas.Framework;
+using ParadoxNotion;
+
+namespace NodeCanvas.Tasks.Conditions;
+
+public class Condition_WaterCookingStateWarning : ConditionTask
+{
+	public LiquidQuality waterQuality;
+
+	public CookingPotItem.CookingState warningState;
+
+	protected override string info
+	{
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		get
+		{
+			return null;
+		}
+	}
+
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
+	public void OnCustomEvent(EventData receivedEvent)
+	{
+	}
+
+	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
+	protected override bool OnCheck()
+	{
+		return false;
+	}
+
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	public Condition_WaterCookingStateWarning()
+	{
+	}
+}
