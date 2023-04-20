@@ -1,0 +1,28 @@
+public enum FPSMeshID
+{
+	None = -1,
+	Rifle,
+	PryBar,
+	Flare,
+	KeroseneLamp,
+	Match,
+	HuntingKnife,
+	Hatchet,
+	Torch,
+	Bow,
+	FlareGun,
+	Brand,
+	EmergencyStim,
+	Stone,
+	Charcoal,
+	Rabbit,
+	Flashlight,
+	BearSpear,
+	HandledShortwave,
+	Revolver,
+	BlueFlare,
+	Body,
+	SprayPaintCan,
+	SprayPaintCanGlyphA,
+	NoiseMaker
+}
