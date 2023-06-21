@@ -1,0 +1,160 @@
+using System;
+using System.Runtime.CompilerServices;
+using Cpp2ILInjected.CallAnalysis;
+using UnityEngine;
+
+public class SnowImprintCustom : MonoBehaviour
+{
+	public bool m_RefreshMaterialOnUpdate;
+
+	public string m_SurfaceTag;
+
+	public Vector2 m_Dimensions;
+
+	public float m_InsetDepth;
+
+	public float m_InsetPower;
+
+	public Vector3 m_NormalStep;
+
+	public float m_DrawDistance;
+
+	public float m_ShadeByZ;
+
+	public float m_ShadeByZBand;
+
+	public float m_ShadeByZPower;
+
+	public bool m_CastShadows;
+
+	public bool m_ReceiveShadows;
+
+	public Mesh m_FinalPassMesh;
+
+	public Mesh m_DepthResetMesh;
+
+	public Material m_DepthResetMaterial;
+
+	public Vector2 m_DepthResetTiltMinMax;
+
+	public Vector3 m_DepthResetOffsetMin;
+
+	public Vector3 m_DepthResetOffsetMax;
+
+	public Material m_ImprintMaterial;
+
+	public Shader m_ImprintExteriorShader;
+
+	public Shader m_ImprintInteriorShader;
+
+	private Vector3 m_MinPos;
+
+	private Vector3 m_MaxPos;
+
+	private Vector3[] m_HermiteCoefficients;
+
+	private int[] m_CoeffIds;
+
+	private int m_NormalStepId;
+
+	private int m_ShadeByZId;
+
+	private int m_MaxInsetId;
+
+	private int m_InsetPowId;
+
+	private int m_FadeDistanceId;
+
+	private int m_VisibleDistanceId;
+
+	private Bounds m_LocalBounds;
+
+	private MaterialPropertyBlock m_MaterialPropertyBlock1;
+
+	public event Action<MaterialPropertyBlock> m_OnPropertyBlockUpdated
+	{
+		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
+		add
+		{
+		}
+		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 3)]
+		remove
+		{
+		}
+	}
+
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 10)]
+	private void Awake()
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SnowImprintCustom), Member = "Reposition")]
+	private void Start()
+	{
+	}
+
+	[CalledBy(Type = typeof(IceFishingHole), Member = "OnBuild")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
+	[CalledBy(Type = typeof(SnowImprintCustom), Member = "Start")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "GeneratePatchCoefficients")]
+	[Calls(Type = typeof(SnowImprintCustom), Member = "BuildMaterialPropertyBlocks")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 17)]
+	public void Reposition()
+	{
+	}
+
+	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
+	private void Update()
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Camera), Member = "get_nearClipPlane")]
+	[Calls(Type = typeof(Graphics), Member = "DrawMesh")]
+	[Calls(Type = typeof(SnowImprintCustom), Member = "BuildMaterialPropertyBlocks")]
+	[CallsDeduplicatedMethods(Count = 22)]
+	[CallsUnknownMethods(Count = 17)]
+	private void LateUpdate()
+	{
+	}
+
+	[CalledBy(Type = typeof(SnowImprintCustom), Member = "Reposition")]
+	[CalledBy(Type = typeof(SnowImprintCustom), Member = "LateUpdate")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 19)]
+	private void BuildMaterialPropertyBlocks()
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
+	public void SetInterior(bool interior)
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	public SnowImprintCustom()
+	{
+	}
+}

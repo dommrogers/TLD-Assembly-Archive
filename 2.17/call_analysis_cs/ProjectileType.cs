@@ -1,0 +1,24 @@
+public enum ProjectileType
+{
+	Bullet,
+	Arrow,
+	Stone,
+	SprayPaint_Direction,
+	SprayPaint_Clothing,
+	SprayPaint_Danger,
+	SprayPaint_DeadEnd,
+	SprayPaint_Avoid,
+	SprayPaint_FirstAid,
+	SprayPaint_FoodDrink,
+	SprayPaint_FireStarting,
+	SprayPaint_Hunting,
+	SprayPaint_Materials,
+	SprayPaint_Storage,
+	SprayPaint_Tools,
+	NowhereToHide_Lure,
+	NowhereToHide_Ward,
+	NowhereToHide_Footstep,
+	NowhereToHide_DispelFog,
+	NowhereToHide_Banish,
+	NoiseMaker
+}

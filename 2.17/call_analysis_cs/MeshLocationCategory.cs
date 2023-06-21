@@ -1,0 +1,21 @@
+public enum MeshLocationCategory
+{
+	Valid,
+	ValidOutOfRange,
+	ValidOutOfRangeFar,
+	Invalid,
+	InvalidNotWithinRequiredVolume,
+	InvalidTooWindy,
+	InvalidOnWood,
+	InvalidOnStraw,
+	InvalidMustBeOnSnow,
+	InvalidOnTopOfAnotherDecal,
+	InvalidNoPaintCans,
+	InvalidTooClose,
+	InvalidInAir,
+	InvalidIndoors,
+	InvalidTooManyPlacedDecals,
+	InvalidOnlyAllowedOneDecal,
+	InvalidNotInBanishmentArea,
+	InvalidNotOnIce
+}
