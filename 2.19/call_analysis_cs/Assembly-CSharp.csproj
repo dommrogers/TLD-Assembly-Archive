@@ -1,0 +1,166 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>Preview</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\call_analysis\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\call_analysis\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\call_analysis\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>..\call_analysis\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="CameraPath3.Runtime">
+      <HintPath>..\call_analysis\CameraPath3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\call_analysis\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\call_analysis\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\call_analysis\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\call_analysis\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="com.rlabrecque.steamworks.net">
+      <HintPath>..\call_analysis\com.rlabrecque.steamworks.net.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.GameplayTag">
+      <HintPath>..\call_analysis\TLD.GameplayTag.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\call_analysis\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\call_analysis\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleWaypointSystem.Runtime">
+      <HintPath>..\call_analysis\SimpleWaypointSystem.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>..\call_analysis\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\call_analysis\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="AK.Wwise.Unity.MonoBehaviour">
+      <HintPath>..\call_analysis\AK.Wwise.Unity.MonoBehaviour.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSplines.Core">
+      <HintPath>..\call_analysis\SuperSplines.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\call_analysis\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AK.Wwise.Unity.API.WwiseTypes">
+      <HintPath>..\call_analysis\AK.Wwise.Unity.API.WwiseTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\call_analysis\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\call_analysis\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\call_analysis\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.Addressables">
+      <HintPath>..\call_analysis\TLD.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\call_analysis\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\call_analysis\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\call_analysis\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.SaveState">
+      <HintPath>..\call_analysis\TLD.SaveState.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\call_analysis\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.Stats">
+      <HintPath>..\call_analysis\TLD.Stats.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.Logging">
+      <HintPath>..\call_analysis\TLD.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.OptionalContent">
+      <HintPath>..\call_analysis\TLD.OptionalContent.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\call_analysis\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.IO">
+      <HintPath>..\call_analysis\TLD.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\call_analysis\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.Game.Events.Runtime">
+      <HintPath>..\call_analysis\TLD.Game.Events.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>..\call_analysis\Rewired_Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\call_analysis\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UserReporting">
+      <HintPath>..\call_analysis\UserReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\call_analysis\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyRoads3Dv3">
+      <HintPath>..\call_analysis\EasyRoads3Dv3.dll</HintPath>
+    </Reference>
+    <Reference Include="MeshBaker.Runtime">
+      <HintPath>..\call_analysis\MeshBaker.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AmazingAssets.TerrainToMesh">
+      <HintPath>..\call_analysis\AmazingAssets.TerrainToMesh.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>..\call_analysis\Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\call_analysis\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.Platform">
+      <HintPath>..\call_analysis\TLD.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\call_analysis\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="AK.Wwise.Unity.API">
+      <HintPath>..\call_analysis\AK.Wwise.Unity.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>..\call_analysis\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="TLD.PDID">
+      <HintPath>..\call_analysis\TLD.PDID.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

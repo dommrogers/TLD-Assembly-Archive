@@ -1,0 +1,37 @@
+namespace MissionTypes;
+
+public enum MissionObjectEvent
+{
+	GenericInteraction,
+	ObjectInspected,
+	ObjectBrokenDown,
+	Fire_Off,
+	Fire_Starting_FireStarterUse,
+	Fire_Starting_TinderSmolder,
+	Fire_Starting_TinderSmallFlame,
+	Fire_Starting_MediumBurn,
+	Fire_Starting_FullBurn,
+	Fire_FullBurn,
+	Fire_BlownOut,
+	Object_Theft,
+	TrustInteraction,
+	BearEncounterWon,
+	BearEncounterFailed,
+	InteractionComplete,
+	HuntedBearDetectedPlayer,
+	AnimatedInteractionComplete,
+	PlayerStunnedEnd,
+	BearEncounterBearDead,
+	BearEncounterAbandoned,
+	ActivateLoadingZone,
+	PhoneHangupComplete,
+	NPC_Diagnosed,
+	NPC_Healed,
+	RescueZone_TargetFound,
+	RescueZone_ShotSpotted,
+	RescueZone_PlayerEntered,
+	RescueZone_PlayerLeft,
+	NPC_ReturnedToHall,
+	Darkwalker_Countdown_Complete,
+	Darkwalker_Banish_Placed
+}
